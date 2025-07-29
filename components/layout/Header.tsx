@@ -1,6 +1,14 @@
 import styles from "@/components/layout/Header.module.scss";
 import Link from "next/link";
-import CartLink from "../ui/CartLink";
+
+import MobileNav from "./MobileNav";
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/products", label: "Products" },
+  { href: "/orders", label: "Orders" },
+  { href: "/cart", label: "Cart" },
+];
 
 export default function Header() {
   
@@ -10,21 +18,19 @@ export default function Header() {
         <Link href={"/"} className={styles.logo}>
           Ecommerce
         </Link>
-        <nav className={styles.nav}>
-          <Link href={"/"} className={styles.navLink}>
-            Home
-          </Link>
-          <Link href={"/products"} className={styles.navLink}>
-            All products
-          </Link>
-          <Link href={"/categories"} className={styles.navLink}>
-            Categories
-          </Link>
-          <Link href={"/account"} className={styles.navLink}>
-            Account
-          </Link>
-          <CartLink/>
+        {/* Навигация для десктопа */}
+        <nav className={styles.desktopNav}>
+          {navLinks.map((link) => (
+            <Link key={link.href} className={styles.navLink} href={link.href}>
+              {link.label}
+            </Link>
+          ))}
         </nav>
+
+        {/* Навигация для мобильных (бургер) */}
+        <div className={styles.mobileNav}>
+          <MobileNav navLinks={navLinks} />
+        </div>
       </div>
     </header>
   );

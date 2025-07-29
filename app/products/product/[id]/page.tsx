@@ -17,7 +17,9 @@ export default async function Page({ params }: Props) {
       <Header />
       <div className="center">
         <div className={styles.wrapper}>
-          <MyCarousel product={product} />
+          <div className={styles.carousel}>
+            <MyCarousel product={product} />
+          </div>
 
           <div className={styles.descWrapper}>
             <div className={styles.h1}>{product.title}</div>

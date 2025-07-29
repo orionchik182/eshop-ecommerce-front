@@ -1,18 +1,80 @@
+@import "@/app/styles/_breakpoints.scss";
+
 .header {
   background-color: #222;
+  padding: 1rem 2rem;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: 120rem;
   margin: 0 auto;
 }
 
 .logo {
   color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Стили для навигации на десктопе */
+.desktopNav {
+  display: flex;
+  gap: 1.5rem;
+
+  // Прячем навигацию на мобильных
+  @include mobile-l {
+    display: none;
+  }
 }
 
 .navLink {
   color: #aaa;
+  text-decoration: none;
+
+  &:hover {
+    color: white;
+  }
 }
 
-.nav {
+/* Стили для мобильного бургера */
+.mobileNav {
+  display: none; // Прячем бургер на десктопе
+
+  // Показываем на мобильных
+  @include mobile-l {
+    display: block;
+  }
+}
+
+.mobileDropdownContent {
+  width: 16rem;
+  margin-right: -3.5rem;
+  background-color: #222 !important;
+  border-color: #334155;
+  padding: 0.5rem;
+}
+
+.mobileDropdownItem {
+  width: 100%;
+  font-size: 1.6rem;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
   display: flex;
-  gap: 1.5rem;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+
+  &:hover,
+  &:focus-within {
+    background-color: #1e293b;
+    color: white;
+  }
+}
+
+.mobileDropdownItem > a:focus {
+  background-color: #1e293b;
+  color: white;
 }

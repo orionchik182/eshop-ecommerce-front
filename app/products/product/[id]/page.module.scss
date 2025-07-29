@@ -1,3 +1,5 @@
+@import "@/app/styles/_breakpoints.scss";
+
 .box {
   background-color: #fff;
   padding: 2rem;
@@ -15,6 +17,23 @@
   grid-template-columns: 0.8fr 1.2fr;
   gap: 8rem;
   margin-top: 4rem;
+
+  @include tablet {
+    margin-left: 2rem;
+  }
+
+  @include tablet-m {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.carousel {
+  @include tablet-m {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20rem;
+  }
 }
 
 .h1 {
