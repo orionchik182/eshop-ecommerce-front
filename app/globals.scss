@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+$primary-color: #5532f6;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+
+.center {
+  max-width: 80rem;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  padding: 2rem;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+
+  &-svg {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &-primary {
+    background-color: $primary-color;
+    color: white;
+  }
+
+  &-black {
+    background-color: #000;
+    color: #fff;
+  }
+
+  &-default {
+    background-color: white;
+    color: black;
+  }
+  &-trans {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+  &-cart {
+    background-color: transparent;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+  }
+
+  &--l {
+    font-size: 1.9rem;
+    padding: 1rem 2rem;
+  }
+
+  &--fixWidth {
+    margin-right: auto;
+  }
+
+  &--flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
