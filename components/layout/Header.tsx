@@ -2,6 +2,7 @@ import styles from "@/components/layout/Header.module.scss";
 import Link from "next/link";
 
 import MobileNav from "./MobileNav";
+import CartHeader from "./CartHeader";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -11,7 +12,6 @@ const navLinks = [
 ];
 
 export default function Header() {
-  
   return (
     <header className={styles.header}>
       <div className="center wrapper">
@@ -22,7 +22,7 @@ export default function Header() {
         <nav className={styles.desktopNav}>
           {navLinks.map((link) => (
             <Link key={link.href} className={styles.navLink} href={link.href}>
-              {link.label}
+              {link.label} {link.label === "Cart" && <CartHeader />}
             </Link>
           ))}
         </nav>

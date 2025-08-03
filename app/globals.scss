@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@/app/styles/_breakpoints.scss";
 
 $primary-color: #5532f6;
 
@@ -63,6 +64,11 @@ body {
   &--l {
     font-size: 1.9rem;
     padding: 1rem 2rem;
+
+    @include tablet-s {
+      font-size: 1.4rem;
+      padding: 0.5rem 1rem;
+    }
   }
 
   &--fixWidth {

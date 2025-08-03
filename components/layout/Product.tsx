@@ -14,7 +14,7 @@ export default function Product({
 }: ProductType) {
   const url = "/products/product/" + _id;
   return (
-    <div className={styles.wrapper}>
+    <div>
       <Link href={url} className={styles.box}>
         {images?.length > 0 ? (
           <Image

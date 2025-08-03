@@ -1,8 +1,18 @@
+@import "@/app/styles/_breakpoints.scss";
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 3rem;
   padding-top: 2rem;
+
+  @include tablet-m {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include mobile-l {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .h2 {

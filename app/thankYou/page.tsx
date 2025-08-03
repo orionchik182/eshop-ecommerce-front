@@ -19,7 +19,7 @@ export default function Page() {
       <div className="center">
         <div className={styles.wrapper}>
           <h1 className={styles.h1}>Thank You</h1>
-          <h2>We will email you when you order will be sent.</h2>
+          <h2>We will email you when order will be sent.</h2>
           <Link href={"/"} className="btn btn-primary btn--flex w-40">
             Back
           </Link>

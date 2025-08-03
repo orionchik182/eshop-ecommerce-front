@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"; // Путь до вашего файла с DropdownMenu
 import { Button } from "@/components/ui/button"; // Предполагаем, что у вас есть компонент Button от shadcn
+import CartHeader from "./CartHeader";
 
 // Определим тип для ссылок для удобства
 type NavLink = {
@@ -40,7 +41,9 @@ export default function MobileNav({ navLinks }: { navLinks: NavLink[] }) {
             asChild
             className={styles.mobileDropdownItem}
           >
-            <Link href={link.href}>{link.label}</Link>
+            <Link href={link.href}>
+              {link.label} {link.label === "Cart" && <CartHeader />}
+            </Link>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

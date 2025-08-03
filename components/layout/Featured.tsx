@@ -13,7 +13,7 @@ export default async function Featured() {
 
   return (
     <div className={styles.bg}>
-      <div className={clsx(styles.wrapper, "center")}>
+      <div className={clsx(styles.wrapper, styles.center)}>
         <div className={styles.column}>
           <div>
             <h1 className={styles.h1}>{products[0].title}</h1>

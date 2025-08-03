@@ -1,13 +1,27 @@
+@import "@/app/styles/_breakpoints.scss";
+
 .wrapper {
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
   gap: 4rem;
+
+  @include tablet-m {
+    gap: 2rem;
+  }
+
+  @include tablet-s {
+    grid-template-columns: 1fr;
+  }
 }
 
 .box {
   background-color: #fff;
   border-radius: 1rem;
   padding: 3rem;
+
+  @include tablet-m {
+    padding: 2rem;
+  }
 }
 
 .input {
@@ -50,6 +64,6 @@
 }
 
 .cityBox {
-    display: flex;
-    gap: .5rem;
+  display: flex;
+  gap: 0.5rem;
 }
